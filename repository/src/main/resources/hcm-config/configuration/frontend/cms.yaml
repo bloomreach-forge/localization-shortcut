@@ -1,0 +1,35 @@
+definitions:
+  config:
+    /hippo:configuration/hippo:frontend/cms/cms-dashshortcuts/localizationShortcutPlugin:
+      jcr:primaryType: frontend:plugin
+      plugin.class: org.bloomreach.forge.localization.shortcut.LocalizationShortcutPlugin
+      sortingWeight: 6
+      wicket.id: shortcut
+      browser.id: service.browse
+      show.timezones: true
+      selectable.timezones: [Europe/Amsterdam, US/Eastern, Canada/Pacific]
+      /en:
+        jcr:primaryType: frontend:pluginconfig
+        shortcut-link-label: Change localization
+        locale-label: Choose a language
+        timezone-label: Choose a timezone (optional)
+      /nl:
+        jcr:primaryType: frontend:pluginconfig
+        shortcut-link-label: Localisatie wijzigen
+        locale-label: Kies een taal
+        timezone-label: Kies een tijdzone (optioneel)
+      /de:
+        jcr:primaryType: frontend:pluginconfig
+        shortcut-link-label: Lokalisierung ändern
+        locale-label: Wähle eine Sprache
+        timezone-label: Wähle eine Zeitzone (optional)
+      /fr:
+        jcr:primaryType: frontend:pluginconfig
+        shortcut-link-label: Changer la localisation
+        locale-label: Choisissez une langue
+        timezone-label: Choisissez un fuseau horaire (facultatif)
+      /es:
+        jcr:primaryType: frontend:pluginconfig
+        shortcut-link-label: Cambiar localización
+        locale-label: Elija un idioma
+        timezone-label: Elija una zona horaria (opcional)
