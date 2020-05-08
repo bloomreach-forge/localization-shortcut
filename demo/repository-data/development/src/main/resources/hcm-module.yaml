@@ -1,0 +1,7 @@
+group: 
+  name: demo
+  after: hippo-cms
+project: demo
+module: 
+  name: demo-repository-data-development
+  after: demo-repository-data-application

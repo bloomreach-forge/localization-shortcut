@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd" xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <modelVersion>4.0.0</modelVersion>
+  <parent>
+    <groupId>org.bloomreach.forge.localizationshortcut.demo</groupId>
+    <artifactId>demo</artifactId>
+    <version>1.0.0</version>
+  </parent>
+  <artifactId>demo-cms-dependencies</artifactId>
+  <packaging>pom</packaging>
+  <name>Bloomreach Forge Localization Shortcut Plugin Demo CMS Dependencies</name>
+  <description>Bloomreach Forge Localization Shortcut Plugin Demo CMS Dependencies</description>
+  <dependencies>
+
+    <dependency>
+      <groupId>org.bloomreach.forge.localization-shortcut</groupId>
+      <artifactId>bloomreach-localization-shortcut-repository</artifactId>
+      <version>${bloomreach.forge.localizationshortcut.version}</version>
+    </dependency>
+
+    <dependency>
+      <groupId>org.bloomreach.forge.localization-shortcut</groupId>
+      <artifactId>bloomreach-localization-shortcut-cms</artifactId>
+      <version>${bloomreach.forge.localizationshortcut.version}</version>
+    </dependency>
+
+    <dependency>
+      <groupId>org.bloomreach.forge.localizationshortcut.demo</groupId>
+      <artifactId>demo-repository-data-application</artifactId>
+      <version>${project.version}</version>
+    </dependency>
+
+    <dependency>
+      <groupId>org.onehippo.cms7</groupId>
+      <artifactId>hippo-package-cms-dependencies</artifactId>
+      <type>pom</type>
+    </dependency>
+
+    <dependency>
+      <groupId>org.onehippo.cms7</groupId>
+      <artifactId>hippo-plugin-gallerypicker</artifactId>
+    </dependency>
+    <dependency>
+      <groupId>org.onehippo.cms7</groupId>
+      <artifactId>hippo-plugin-resourcebundle-editor</artifactId>
+    </dependency>
+    <dependency>
+      <groupId>org.onehippo.cms7</groupId>
+      <artifactId>hippo-plugin-selections-addon-cms</artifactId>
+    </dependency>
+    <dependency>
+      <groupId>org.onehippo.cms7</groupId>
+      <artifactId>hippo-plugin-selections-addon-repository</artifactId>
+    </dependency>
+  </dependencies>
+</project>

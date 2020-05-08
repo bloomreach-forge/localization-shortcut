@@ -1,0 +1,6 @@
+site: demo
+group: demo
+project: demo
+module:
+  name: demo-repository-data-site-development
+  after: demo-repository-data-site

@@ -1,0 +1,5 @@
+definitions:
+  namespace:
+    demo:
+      uri: http://www.demo.com/demo/nt/1.0
+      cnd: namespaces/demo.cnd

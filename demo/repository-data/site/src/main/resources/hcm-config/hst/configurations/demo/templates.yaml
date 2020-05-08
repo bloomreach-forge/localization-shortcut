@@ -1,0 +1,4 @@
+definitions:
+  config:
+    /hst:hst/hst:configurations/demo/hst:templates:
+      jcr:primaryType: hst:templates

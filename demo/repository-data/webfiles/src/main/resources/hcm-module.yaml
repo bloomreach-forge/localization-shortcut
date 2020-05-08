@@ -1,0 +1,5 @@
+group: 
+  name: demo
+project: demo
+module:
+  name: demo-repository-data-webfiles
