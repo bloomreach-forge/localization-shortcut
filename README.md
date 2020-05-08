@@ -1,2 +1,2 @@
-# localization-shortcut
-Change your current locale and timezone without logging out
+# Bloomreach Localization Shortcut Plugin
+Change your current locale and timezone from the CMS
