@@ -20,7 +20,7 @@
 
   <groupId>org.bloomreach.forge.localization-shortcut</groupId>
   <artifactId>bloomreach-localization-shortcut</artifactId>
-  <version>2.0.0</version>
+  <version>2.0.1-SNAPSHOT</version>
 
   <properties>
     <!-- Bloomreach CMS 14.0.0-2 versioning -->
