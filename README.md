@@ -8,7 +8,7 @@ This can be particularly useful when users log into the CMS through an SSO-servi
 
 Install the plugin version property in the ```<properties>``` section of the main pom.xml.
 
-Set the latest version that has been released for your brX(M) project version. 
+Set the [latest version](release-notes.md) that has been released for your brX(M) project version. 
 
 ```xml
 <bloomreach.forge.localizationshortcut.version>2.0.0</bloomreach.forge.localizationshortcut.version>
