@@ -30,7 +30,7 @@
     <wicket.version>7.14.0</wicket.version>
 
     <!-- test related -->
-    <junit.version>4.12</junit.version>
+    <junit.version>4.13.1</junit.version>
     <easymock.version>4.0.2</easymock.version>
 
     <!--documentation site -->
