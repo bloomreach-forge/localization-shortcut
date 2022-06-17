@@ -7,7 +7,7 @@
   <parent>
     <groupId>org.onehippo.cms7</groupId>
     <artifactId>hippo-cms7-project</artifactId>
-    <version>31.0.0</version>
+    <version>15.0.0</version>
   </parent>
 
   <packaging>pom</packaging>
@@ -20,14 +20,14 @@
 
   <groupId>org.bloomreach.forge.localization-shortcut</groupId>
   <artifactId>bloomreach-localization-shortcut</artifactId>
-  <version>2.0.1-SNAPSHOT</version>
+  <version>3.0.0-SNAPSHOT</version>
 
   <properties>
-    <!-- Bloomreach CMS 14.0.0-2 versioning -->
-    <hippo.cms.version>14.0.0-2</hippo.cms.version>
-    <hippo.repository.version>14.0.0-2</hippo.repository.version>
+    <!-- Bloomreach CMS 15.0.0 versioning -->
+    <hippo.cms.version>${hippo.release.version}</hippo.cms.version>
+    <hippo.repository.version>${hippo.release.version}</hippo.repository.version>
     <!-- from CMS root pom -->
-    <wicket.version>7.14.0</wicket.version>
+    <wicket.version>7.4.0</wicket.version>
 
     <!-- test related -->
     <junit.version>4.13.1</junit.version>
@@ -71,12 +71,12 @@
     <repository>
       <id>hippo-maven2</id>
       <name>Hippo Maven 2</name>
-      <url>http://maven.onehippo.com/maven2</url>
+      <url>https://maven.onehippo.com/maven2</url>
     </repository>
     <repository>
       <id>hippo-maven2-forge</id>
       <name>Hippo Maven 2 Forge Repositories</name>
-      <url>http://maven.onehippo.com/maven2-forge</url>
+      <url>https://maven.onehippo.com/maven2-forge</url>
     </repository>
   </repositories>
 

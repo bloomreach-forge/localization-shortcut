@@ -5,7 +5,7 @@
   <parent>
     <groupId>org.bloomreach.forge.localizationshortcut.demo</groupId>
     <artifactId>demo-site</artifactId>
-    <version>2.0.1-SNAPSHOT</version>
+    <version>3.0.0-SNAPSHOT</version>
   </parent>
   <artifactId>demo-webapp</artifactId>
   <packaging>war</packaging>
@@ -26,7 +26,7 @@
     <dependency>
       <groupId>org.bloomreach.forge.localizationshortcut.demo</groupId>
       <artifactId>demo-components</artifactId>
-      <version>2.0.1-SNAPSHOT</version>
+      <version>3.0.0-SNAPSHOT</version>
     </dependency>
     <dependency>
       <groupId>org.onehippo.cms7.hst.toolkit-resources.addon</groupId>
