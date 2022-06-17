@@ -319,8 +319,7 @@ public class LocalizationShortcutPlugin extends RenderPlugin<Object> implements 
                     } else log.debug("Timezone not set!");
                 }
                 //trigger a full page reload (incl. navapp)
-                RequestCycle.get().find(AjaxRequestTarget.class).appendJavaScript("window.top.location.reload();");
-
+                RequestCycle.get().find(AjaxRequestTarget.class).ifPresent(target -> target.appendJavaScript("window.top.location.reload();"));
             } catch (Exception e) {
                 log.error(e.getClass().getSimpleName() + " occurred while changing language setting", e);
             }
