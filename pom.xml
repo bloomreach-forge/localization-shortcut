@@ -27,7 +27,7 @@
     <hippo.cms.version>${hippo.release.version}</hippo.cms.version>
     <hippo.repository.version>${hippo.release.version}</hippo.repository.version>
     <!-- from CMS root pom -->
-    <wicket.version>8.9.0</wicket.version>
+    <wicket.version>9.7.0</wicket.version>
 
     <!-- test related -->
     <junit.version>4.13.1</junit.version>
