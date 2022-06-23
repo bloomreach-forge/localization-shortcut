@@ -16,19 +16,24 @@
 
 ## Version Compatibility
 
-| brXM     | Localization Shortcut Plugin |
-|----------|------------------------------|
-| 15.0.0   | 3.0.0                        |
-| 14.0.0-2 | 2.0.0                        |
-| 14.x     | 2.x.x                        |
-| 13.x     | 1.x.x                        |
+| Bloomreach XM | Localization Shortcut Plugin |
+|---------------|--------------------------|
+| 15.x          | 3.x                      |
+| 14.x          | 2.x                      |
 
 
 ## Release Notes
 
 ### 3.0.0
-Upgrade to Bloomreach Experience Manager 15, i.e. use version 15.0.0, Wicket 9.7.0 and build on Java 11.
+
+_Released: 23 June 2022_
+
+- Upgrade to Bloomreach Experience Manager 15, i.e. use version 15.0.0, Wicket 9.7.0 and build on Java 11.
+- Optimizations of pom.xml's: less dependencies. 'provided' scope on Wicket
 
 
 ### 2.0.0
-First release, compatible with brXM version 14.0.0-2
+
+_Released: 27 May 2020_
+
+First release, compatible with Bloomreach XM version 14.0.0-2
