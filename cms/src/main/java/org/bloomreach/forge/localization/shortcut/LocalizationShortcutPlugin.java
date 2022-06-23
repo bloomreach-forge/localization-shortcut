@@ -1,11 +1,11 @@
 /*
- *  Copyright 2009-2020 Hippo B.V. (http://www.onehippo.com)
+ *  Copyright 2009-2022 Bloomreach (https://www.bloomreach.com)
  *
  *  Licensed under the Apache License, Version 2.0 (the "License");
  *  you may not use this file except in compliance with the License.
  *  You may obtain a copy of the License at
  *
- *       http://www.apache.org/licenses/LICENSE-2.0
+ *       https://www.apache.org/licenses/LICENSE-2.0
  *
  *  Unless required by applicable law or agreed to in writing, software
  *  distributed under the License is distributed on an "AS IS" BASIS,
@@ -319,8 +319,7 @@ public class LocalizationShortcutPlugin extends RenderPlugin<Object> implements 
                     } else log.debug("Timezone not set!");
                 }
                 //trigger a full page reload (incl. navapp)
-                RequestCycle.get().find(AjaxRequestTarget.class).appendJavaScript("window.top.location.reload();");
-
+                RequestCycle.get().find(AjaxRequestTarget.class).ifPresent(target -> target.appendJavaScript("window.top.location.reload();"));
             } catch (Exception e) {
                 log.error(e.getClass().getSimpleName() + " occurred while changing language setting", e);
             }

@@ -7,7 +7,7 @@
 # (the "License"); you may not use this file except in compliance with
 # the License.  You may obtain a copy of the License at
 #
-#     http://www.apache.org/licenses/LICENSE-2.0
+#     https://www.apache.org/licenses/LICENSE-2.0
 #
 # Unless required by applicable law or agreed to in writing, software
 # distributed under the License is distributed on an "AS IS" BASIS,
@@ -31,7 +31,7 @@ L4J_OPTS="-Dlog4j.configurationFile=file://${CATALINA_HOME}/conf/log4j2.xml -DLo
 JVM_OPTS="-server -Xms${JAVA_MINHEAP} -Xmx${JAVA_MAXHEAP} -XX:+UseG1GC -Djava.util.Arrays.useLegacyMergeSort=true"
 
 # JVM garbage Collector options
-VGC_OPTS="-verbosegc -XX:+PrintGCDetails -XX:+PrintGCDateStamps -Xloggc:${CATALINA_HOME}/logs/gc.log -XX:+UseGCLogFileRotation -XX:NumberOfGCLogFiles=5 -XX:GCLogFileSize=2048k"
+VGC_OPTS="-Xlog:gc+ergo*:file=${CATALINA_BASE}/logs/gc.log:time:filecount=5,filesize=2048k"
 
 # JVM heapdump options
 DMP_OPTS="-XX:+HeapDumpOnOutOfMemoryError -XX:HeapDumpPath=${CATALINA_HOME}/temp"

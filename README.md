@@ -11,7 +11,7 @@ Install the plugin version property in the ```<properties>``` section of the mai
 Set the [latest version](release-notes.md) that has been released for your brX(M) project version. 
 
 ```xml
-<bloomreach.forge.localizationshortcut.version>2.0.0</bloomreach.forge.localizationshortcut.version>
+<bloomreach.forge.localizationshortcut.version>3.0.0</bloomreach.forge.localizationshortcut.version>
 ```
 
 Install the following dependencies in the ```<dependencies>``` section of the ```cms-dependencies``` module's pom.xml:

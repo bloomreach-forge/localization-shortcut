@@ -5,7 +5,7 @@
   <parent>
     <groupId>org.bloomreach.forge.localizationshortcut.demo</groupId>
     <artifactId>demo-repository-data</artifactId>
-    <version>2.0.0</version>
+    <version>3.0.0</version>
   </parent>
 
   <name>Bloomreach Forge Localization Shortcut Plugin Demo Repository Data For Site Development</name>
