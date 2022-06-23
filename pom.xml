@@ -23,18 +23,11 @@
   <version>3.0.0-SNAPSHOT</version>
 
   <properties>
-    <!-- Bloomreach CMS 15.0.0 versioning -->
+    <!-- Bloomreach CMS versioning -->
     <hippo.cms.version>${hippo.release.version}</hippo.cms.version>
-    <hippo.repository.version>${hippo.release.version}</hippo.repository.version>
+
     <!-- from CMS root pom -->
     <wicket.version>9.7.0</wicket.version>
-
-    <!-- test related -->
-    <junit.version>4.13.1</junit.version>
-    <easymock.version>4.0.2</easymock.version>
-
-    <!--documentation site -->
-    <maven.plugin.site.version>3.7.1</maven.plugin.site.version>
   </properties>
 
   <modules>
@@ -73,26 +66,21 @@
       <name>Hippo Maven 2</name>
       <url>https://maven.onehippo.com/maven2</url>
     </repository>
-    <repository>
-      <id>hippo-maven2-forge</id>
-      <name>Hippo Maven 2 Forge Repositories</name>
-      <url>https://maven.onehippo.com/maven2-forge</url>
-    </repository>
   </repositories>
 
   <build>
     <defaultGoal>package</defaultGoal>
-    <plugins>
-      <plugin>
-        <groupId>org.apache.maven.plugins</groupId>
-        <artifactId>maven-site-plugin</artifactId>
-        <version>${maven.plugin.site.version}</version>
-      </plugin>
-    </plugins>
   </build>
 
   <dependencyManagement>
     <dependencies>
+
+      <dependency>
+        <groupId>org.apache.wicket</groupId>
+        <artifactId>wicket-core</artifactId>
+        <version>${wicket.version}</version>
+        <scope>provided</scope>
+      </dependency>
 
       <dependency>
         <groupId>org.onehippo.cms7</groupId>
@@ -100,60 +88,7 @@
         <version>${hippo.cms.version}</version>
         <scope>provided</scope>
       </dependency>
-
-      <dependency>
-        <groupId>org.onehippo.cms7</groupId>
-        <artifactId>hippo-cms-perspectives</artifactId>
-        <version>${hippo.cms.version}</version>
-        <scope>provided</scope>
-      </dependency>
-
-      <dependency>
-        <groupId>org.onehippo.cms7</groupId>
-        <artifactId>hippo-cms-engine</artifactId>
-        <version>${hippo.cms.version}</version>
-        <scope>provided</scope>
-      </dependency>
-
-      <dependency>
-        <groupId>org.onehippo.cms7</groupId>
-        <artifactId>hippo-repository-api</artifactId>
-        <version>${hippo.repository.version}</version>
-        <scope>provided</scope>
-      </dependency>
-
-      <!-- Test dependencies -->
-      <dependency>
-        <groupId>junit</groupId>
-        <artifactId>junit</artifactId>
-        <version>${junit.version}</version>
-        <scope>test</scope>
-      </dependency>
-      <dependency>
-        <groupId>org.easymock</groupId>
-        <artifactId>easymock</artifactId>
-        <version>${easymock.version}</version>
-        <scope>test</scope>
-      </dependency>
     </dependencies>
   </dependencyManagement>
-
-  <profiles>
-    <profile>
-      <!-- For generating/publishing GitHub Site Pages into /docs/ folder on master branch only -->
-      <id>github.pages</id>
-      <build>
-        <plugins>
-          <plugin>
-            <groupId>org.apache.maven.plugins</groupId>
-            <artifactId>maven-site-plugin</artifactId>
-            <configuration>
-              <outputDirectory>docs</outputDirectory>
-            </configuration>
-          </plugin>
-        </plugins>
-      </build>
-    </profile>
-  </profiles>
 
 </project>
