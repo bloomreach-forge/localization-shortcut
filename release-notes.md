@@ -16,7 +16,7 @@
 
 ## Version Compatibility
 
-| Bloomreach XM | Localization Shortcut Plugin |
+| Bloomreach XM | Localization Shortcut Plugin | 
 |---------------|------------------------------|
 | 16.x          | 4.x                          |
 | 15.x          | 3.x                          |
