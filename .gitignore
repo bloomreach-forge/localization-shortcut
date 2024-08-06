@@ -15,6 +15,7 @@ storage
 .project
 .settings
 /repo
+demo/essentials/overlays
 .idea
 *.iml
 /essentials/overlays

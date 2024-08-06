@@ -1,14 +1,23 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <project>
-  <projectNamespace>demo</projectNamespace>
-  <confirmParams>false</confirmParams>
-  <selectedProjectPackage>org.bloomreach.forget.localizationshortcut.demo</selectedProjectPackage>
-  <selectedBeansPackage>org.bloomreach.forget.localizationshortcut.demo.beans</selectedBeansPackage>
-  <selectedComponentsPackage>org.bloomreach.forget.localizationshortcut.demo.components</selectedComponentsPackage>
-  <selectedRestPackage>org.bloomreach.forget.localizationshortcut.demo.rest</selectedRestPackage>
-  <hstRoot>/hst:demo</hstRoot>
-  <webfileBundleName>site</webfileBundleName>
-  <setupDone>false</setupDone>
-  <useSamples>true</useSamples>
-  <extraTemplates>true</extraTemplates>
+    <applicationSubModule>application</applicationSubModule>
+    <cmsDependenciesModule>cms-dependencies</cmsDependenciesModule>
+    <cmsModule>cms</cmsModule>
+    <confirmParams>false</confirmParams>
+    <developmentSubModule>development</developmentSubModule>
+    <enterprise>false</enterprise>
+    <extraTemplates>true</extraTemplates>
+    <hstRoot>/hst:demo</hstRoot>
+    <projectNamespace>demo</projectNamespace>
+    <repositoryDataModule>repository-data</repositoryDataModule>
+    <selectedBeansPackage>org.bloomreach.forget.localizationshortcut.demo.beans</selectedBeansPackage>
+    <selectedComponentsPackage>org.bloomreach.forget.localizationshortcut.demo.components</selectedComponentsPackage>
+    <selectedProjectPackage>org.bloomreach.forget.localizationshortcut.demo</selectedProjectPackage>
+    <selectedRestPackage>org.bloomreach.forget.localizationshortcut.demo.rest</selectedRestPackage>
+    <setupDone>true</setupDone>
+    <siteContextPath>/site</siteContextPath>
+    <siteModule>site</siteModule>
+    <useSamples>true</useSamples>
+    <webfileBundleName>site</webfileBundleName>
+    <webfilesSubModule>webfiles</webfilesSubModule>
 </project>

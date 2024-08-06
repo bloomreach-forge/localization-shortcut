@@ -7,7 +7,7 @@
   <parent>
     <groupId>org.onehippo.cms7</groupId>
     <artifactId>hippo-cms7-project</artifactId>
-    <version>15.0.0</version>
+    <version>16.0.0</version>
   </parent>
 
   <packaging>pom</packaging>
@@ -27,7 +27,7 @@
     <hippo.cms.version>${hippo.release.version}</hippo.cms.version>
 
     <!-- from CMS root pom -->
-    <wicket.version>9.7.0</wicket.version>
+    <wicket.version>10.0.0</wicket.version>
   </properties>
 
   <modules>
@@ -44,9 +44,9 @@
 
   <distributionManagement>
     <repository>
-      <name>Hippo Maven 2 Forge Repository</name>
-      <id>hippo-maven2-forge</id>
-      <url>https://maven.onehippo.com/content/repositories/forge-releases/</url>
+      <name>Bloomreach Maven 2 Forge Repository</name>
+      <id>bloomreach-maven2-forge</id>
+      <url>https://maven.bloomreach.com/content/repositories/forge-releases/</url>
       <uniqueVersion>false</uniqueVersion>
     </repository>
   </distributionManagement>
@@ -62,9 +62,14 @@
 
   <repositories>
     <repository>
-      <id>hippo-maven2</id>
-      <name>Hippo Maven 2</name>
-      <url>https://maven.onehippo.com/maven2</url>
+      <id>bloomreach</id>
+      <name>Bloomreach Maven 2 repository</name>
+      <url>https://maven.bloomreach.com/maven2/</url>
+      <snapshots />
+      <releases>
+        <updatePolicy>never</updatePolicy>
+      </releases>
+      <layout>default</layout>
     </repository>
   </repositories>
 

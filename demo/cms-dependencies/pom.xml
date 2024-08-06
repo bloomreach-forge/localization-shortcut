@@ -16,13 +16,13 @@
     <dependency>
       <groupId>org.bloomreach.forge.localization-shortcut</groupId>
       <artifactId>bloomreach-localization-shortcut-repository</artifactId>
-      <version>${bloomreach.forge.localizationshortcut.version}</version>
+      <version>${project.version}</version>
     </dependency>
 
     <dependency>
       <groupId>org.bloomreach.forge.localization-shortcut</groupId>
       <artifactId>bloomreach-localization-shortcut-cms</artifactId>
-      <version>${bloomreach.forge.localizationshortcut.version}</version>
+      <version>${project.version}</version>
     </dependency>
 
     <dependency>

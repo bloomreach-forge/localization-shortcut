@@ -1,0 +1,48 @@
+definitions:
+  config:
+    /hippo:configuration/hippo:translations/hippo:types/demo:newsdocument:
+      jcr:primaryType: hipposys:resourcebundles
+      /en:
+        jcr:primaryType: hipposys:resourcebundle
+        demo:author: Author
+        demo:content: Content
+        demo:date: Date
+        demo:image: Image
+        demo:introduction: Introduction
+        demo:location: Location
+        demo:source: Source
+        demo:title: Title
+        jcr:name: News Item
+      /nl:
+        jcr:primaryType: hipposys:resourcebundle
+        demo:author: Auteur
+        demo:content: Inhoud
+        demo:date: Datum
+        demo:image: Afbeelding
+        demo:introduction: Introductie
+        demo:location: Locatie
+        demo:source: Bron
+        demo:title: Titel
+        jcr:name: Nieuwsbericht
+      /de:
+        jcr:primaryType: hipposys:resourcebundle
+        demo:author: Verfasser
+        demo:content: Inhalt
+        demo:date: Datum
+        demo:image: Abbildung
+        demo:introduction: Einführung
+        demo:location: Standort
+        demo:source: Quelle
+        demo:title: Titel
+        jcr:name: News
+      /fr:
+        jcr:primaryType: hipposys:resourcebundle
+        demo:author: Auteur
+        demo:content: Contenu
+        demo:date: Date
+        demo:image: Image
+        demo:introduction: Introduction
+        demo:location: Lieu
+        demo:source: Source
+        demo:title: Titre
+        jcr:name: Message d'info
