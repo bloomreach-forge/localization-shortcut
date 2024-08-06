@@ -1,5 +1,5 @@
 /*
- *  Copyright 2009-2022 Bloomreach (https://www.bloomreach.com)
+ *  Copyright 2009-2024 Bloomreach (https://www.bloomreach.com)
  *
  *  Licensed under the Apache License, Version 2.0 (the "License");
  *  you may not use this file except in compliance with the License.
@@ -23,7 +23,7 @@ import java.util.Locale;
 import java.util.TimeZone;
 import java.util.stream.Collectors;
 
-import javax.servlet.http.Cookie;
+import jakarta.servlet.http.Cookie;
 
 import org.apache.commons.lang.StringUtils;
 import org.apache.wicket.Component;

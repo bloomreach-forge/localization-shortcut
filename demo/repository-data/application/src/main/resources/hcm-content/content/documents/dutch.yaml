@@ -1,0 +1,9 @@
+/content/documents/dutch:
+  .meta:order-before: administration
+  jcr:primaryType: hippostd:folder
+  jcr:mixinTypes: ['hippo:named', 'hippotranslation:translated', 'mix:versionable']
+  jcr:uuid: 4a356a4f-0c34-409b-8c62-7588bf536dcc
+  hippo:name: Dutch
+  hippostd:foldertype: [new-translated-folder, new-document]
+  hippotranslation:id: 996bcac5-86cf-49b5-a7a3-16a74863e814
+  hippotranslation:locale: nl

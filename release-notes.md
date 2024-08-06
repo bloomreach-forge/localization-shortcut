@@ -16,13 +16,20 @@
 
 ## Version Compatibility
 
-| Bloomreach XM | Localization Shortcut Plugin |
-|---------------|--------------------------|
-| 15.x          | 3.x                      |
-| 14.x          | 2.x                      |
+| Bloomreach XM | Localization Shortcut Plugin | 
+|---------------|------------------------------|
+| 16.x          | 4.x                          |
+| 15.x          | 3.x                          |
+| 14.x          | 2.x                          |
 
 
 ## Release Notes
+### 4.0.0
+
+_Released: 6 August 2024_
+
+- Upgrade to Bloomreach Experience Manager 16, JDK 17.
+
 
 ### 3.0.0
 

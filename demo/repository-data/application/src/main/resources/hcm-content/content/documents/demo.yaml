@@ -1,6 +1,8 @@
 /content/documents/demo:
+  .meta:order-before: administration
   jcr:primaryType: hippostd:folder
   jcr:mixinTypes: ['hippo:named', 'hippotranslation:translated', 'mix:referenceable']
+  jcr:uuid: 1ecf2c41-e3e8-40eb-a39a-86dbe41e3046
   hippo:name: Bloomreach Forge Localization Shortcut Plugin Demo
   hippostd:foldertype: [new-translated-folder, new-document]
   hippotranslation:id: 996bcac5-86cf-49b5-a7a3-16a74863e814

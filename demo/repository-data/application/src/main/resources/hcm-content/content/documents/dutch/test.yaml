@@ -1,0 +1,97 @@
+/content/documents/dutch/test:
+  jcr:primaryType: hippo:handle
+  jcr:mixinTypes: ['hippo:named', 'hippo:versionInfo', 'mix:referenceable']
+  jcr:uuid: 10522fe2-b86b-4f25-aa81-9f3f035db9b8
+  hippo:name: Test
+  hippo:versionHistory: 0f505656-6c01-4ddb-aece-81c5ae9a8532
+  /test[1]:
+    jcr:primaryType: demo:newsdocument
+    jcr:mixinTypes: ['mix:referenceable']
+    jcr:uuid: 16ec389c-4b13-4b92-b090-ab43fe6bb345
+    demo:author: ''
+    demo:date: 2024-08-06T00:00:00+02:00
+    demo:documenttype: news
+    demo:introduction: ''
+    demo:location: ''
+    demo:source: ''
+    demo:title: Test
+    hippo:availability: []
+    hippo:related___pathreference: []
+    hippostd:retainable: false
+    hippostd:state: draft
+    hippostdpubwf:createdBy: admin
+    hippostdpubwf:creationDate: 2024-08-06T17:52:53.052+02:00
+    hippostdpubwf:lastModificationDate: 2024-08-06T17:52:53.052+02:00
+    hippostdpubwf:lastModifiedBy: admin
+    hippotranslation:id: f9413f92-da2b-466a-8dd7-fe3f3af23d87
+    hippotranslation:locale: nl
+    /demo:content:
+      jcr:primaryType: hippostd:html
+      hippostd:content: ''
+    /demo:image:
+      jcr:primaryType: hippogallerypicker:imagelink
+      hippo:docbase: cafebabe-cafe-babe-cafe-babecafebabe
+      hippo:facets: []
+      hippo:modes: []
+      hippo:values: []
+  /test[2]:
+    jcr:primaryType: demo:newsdocument
+    jcr:mixinTypes: ['mix:referenceable', 'mix:versionable']
+    jcr:uuid: 549ddf25-85fa-435b-8466-68020bb9b421
+    demo:author: ''
+    demo:date: 2024-08-06T00:00:00+02:00
+    demo:documenttype: news
+    demo:introduction: ''
+    demo:location: ''
+    demo:source: ''
+    demo:title: Test
+    hippo:availability: [preview]
+    hippo:related___pathreference: []
+    hippostd:retainable: false
+    hippostd:state: unpublished
+    hippostdpubwf:createdBy: admin
+    hippostdpubwf:creationDate: 2024-08-06T17:52:53.052+02:00
+    hippostdpubwf:lastModificationDate: 2024-08-06T17:53:01.245+02:00
+    hippostdpubwf:lastModifiedBy: admin
+    hippotranslation:id: f9413f92-da2b-466a-8dd7-fe3f3af23d87
+    hippotranslation:locale: nl
+    /demo:content:
+      jcr:primaryType: hippostd:html
+      hippostd:content: ''
+    /demo:image:
+      jcr:primaryType: hippogallerypicker:imagelink
+      hippo:docbase: cafebabe-cafe-babe-cafe-babecafebabe
+      hippo:facets: []
+      hippo:modes: []
+      hippo:values: []
+  /test[3]:
+    jcr:primaryType: demo:newsdocument
+    jcr:mixinTypes: ['mix:referenceable']
+    jcr:uuid: 936a1689-d6ff-4d7a-b5c1-8645acfd3a62
+    demo:author: ''
+    demo:date: 2024-08-06T00:00:00+02:00
+    demo:documenttype: news
+    demo:introduction: ''
+    demo:location: ''
+    demo:source: ''
+    demo:title: Test
+    hippo:availability: [live]
+    hippo:related___pathreference: []
+    hippostd:retainable: false
+    hippostd:state: published
+    hippostdpubwf:createdBy: admin
+    hippostdpubwf:creationDate: 2024-08-06T17:52:53.052+02:00
+    hippostdpubwf:lastModificationDate: 2024-08-06T17:53:01.245+02:00
+    hippostdpubwf:lastModifiedBy: admin
+    hippostdpubwf:publicationDate: 2024-08-06T17:53:09.755+02:00
+    hippotranslation:id: f9413f92-da2b-466a-8dd7-fe3f3af23d87
+    hippotranslation:locale: nl
+    /demo:content:
+      jcr:primaryType: hippostd:html
+      hippostd:content: ''
+    /demo:image:
+      jcr:primaryType: hippogallerypicker:imagelink
+      hippo:docbase: cafebabe-cafe-babe-cafe-babecafebabe
+      hippo:facets: []
+      hippo:modes: []
+      hippo:values: []

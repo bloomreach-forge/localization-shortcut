@@ -3,9 +3,11 @@ definitions:
     /hippo:namespaces/demo/basedocument:
       jcr:primaryType: hipposysedit:templatetype
       jcr:mixinTypes: ['mix:referenceable']
+      jcr:uuid: b3e7b88d-436a-407d-8c9a-fadd644ff86a
       /hipposysedit:nodetype:
         jcr:primaryType: hippo:handle
         jcr:mixinTypes: ['mix:referenceable']
+        jcr:uuid: c68db735-1897-42e5-9488-bb5b34743ce8
         /hipposysedit:nodetype:
           jcr:primaryType: hipposysedit:nodetype
           jcr:mixinTypes: ['hipposysedit:remodel']
