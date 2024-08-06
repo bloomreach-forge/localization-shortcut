@@ -27,7 +27,7 @@
     <hippo.cms.version>${hippo.release.version}</hippo.cms.version>
 
     <!-- from CMS root pom -->
-    <wicket.version>10.0.0</wicket.version>
+    <wicket.version>10.1.0</wicket.version>
   </properties>
 
   <modules>
