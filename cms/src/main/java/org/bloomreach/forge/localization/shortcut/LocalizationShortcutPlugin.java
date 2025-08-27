@@ -23,8 +23,6 @@ import java.util.Locale;
 import java.util.TimeZone;
 import java.util.stream.Collectors;
 
-import jakarta.servlet.http.Cookie;
-
 import org.apache.commons.lang.StringUtils;
 import org.apache.wicket.Component;
 import org.apache.wicket.ajax.AjaxRequestTarget;
@@ -47,13 +45,13 @@ import org.hippoecm.frontend.service.render.RenderPlugin;
 import org.hippoecm.frontend.session.UserSession;
 import org.hippoecm.frontend.settings.GlobalSettings;
 import org.hippoecm.frontend.skin.Icon;
-import org.hippoecm.frontend.util.WebApplicationHelper;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 
 public class LocalizationShortcutPlugin extends RenderPlugin<Object> implements IHeaderContributor {
 
+    private static final long serialVersionUID = 1L;
     private static final Logger log = LoggerFactory.getLogger(LocalizationShortcutPlugin.class);
 
     private static final String PARAM_SHORTCUT_LINK_LABEL = "shortcut-link-label";
@@ -68,6 +66,10 @@ public class LocalizationShortcutPlugin extends RenderPlugin<Object> implements 
     public static final List<String> SUPPORTED_JAVA_TIMEZONES = Collections.unmodifiableList(
             getSupportedJavaTimeZones());
 
+    private final CookieHelper cookieHelper = new CookieHelper();
+    private static final String LOCALE_COOKIE = "loc";
+    private static final String TZ_COOKIE = "tzcookie";
+
     /**
      * Exclude POSIX compatible timezones because they may cause confusions
      */
@@ -80,6 +82,8 @@ public class LocalizationShortcutPlugin extends RenderPlugin<Object> implements 
 
     public LocalizationShortcutPlugin(final IPluginContext context, final IPluginConfig config) {
         super(context, config);
+
+        syncLocalizationSettings();
 
         AjaxLink<Object> link = new LocalizationShortcutPlugin.Link("link", context, config, this);
         add(link);
@@ -147,10 +151,87 @@ public class LocalizationShortcutPlugin extends RenderPlugin<Object> implements 
     }
 
     /**
+     * Method, called on initialization, to synchronize localization settings. On initialization the cookie values from the
+     * session will be used to update the CMS user session with the values stored in the session.
+     */
+    protected void syncLocalizationSettings() {
+        // Synchronize the user session locale and time zone with any previously picked settings (available in cookies)
+        final UserSession userSession = UserSession.get();
+        syncLocale(userSession);
+        syncTimeZone(userSession);
+    }
+
+    /**
+     * Sync the user's locale (set in user session) with the locale from the HTTP session cookies (when available).
+     * Update the user setting when there is a cookie value that is not equal to the current user setting.
+     * @param userSession the CMS/Wicket user session
+     */
+    protected void syncLocale(final UserSession userSession) {
+        final String cookieLocale = cookieHelper.getCookieValue(LOCALE_COOKIE);
+        if (StringUtils.isNotBlank(cookieLocale)) {
+            final Locale locale = Locale.forLanguageTag(cookieLocale);
+            if (!locale.equals(userSession.getLocale())) {
+                // and update the session locale
+                log.debug("Udate locale to: {}", cookieLocale);
+                userSession.setLocale(locale);
+            }
+        }
+    }
+
+    /**
+     * Sync the user timezone (set in user session) with the timezone from the HTTP session cookies (when available).
+     * Update the user setting when there is a cookie value that is not equal to the current user setting.
+     * @param userSession the CMS/Wicket user session
+     */
+    protected void syncTimeZone(final UserSession userSession) {
+        final String cookieTimeZone = cookieHelper.getCookieValue(TZ_COOKIE);
+        if (StringUtils.isNotBlank(cookieTimeZone)) {
+            final TimeZone timeZone = TimeZone.getTimeZone(cookieTimeZone);
+            if (!timeZone.equals(userSession.getClientInfo().getProperties().getTimeZone())) {
+                // Store selected timezone in session and cookie
+                log.debug("Update timezone to: {}", cookieTimeZone);
+                userSession.getClientInfo().getProperties().setTimeZone(timeZone);
+            }
+        }
+    }
+
+    /**
+     * Update the user session locale with the locale based on the provided locale string.
+     * @param localeString the selected locale as string representation
+     */
+    protected void updateLocale(final String localeString) {
+        // and update the session locale
+        getSession().setLocale(Locale.forLanguageTag(localeString));
+    }
+
+    /**
+     * Update the user session timezone with the provided timezone string, when the string is regarded as a valid
+     * time zone (otherwise the timezone will not be updated).
+     * @param timeZoneString the selected timezone as string representation
+     */
+    protected void updateTimeZone(final String timeZoneString) {
+        if (isTimeZoneValid(timeZoneString)) {
+            final TimeZone timeZone = TimeZone.getTimeZone(timeZoneString);
+            // Store selected timezone in session and cookie
+            getSession().getClientInfo().getProperties().setTimeZone(timeZone);
+        }
+    }
+
+    private boolean isTimeZoneValid(final String timeZone) {
+        return timeZone != null && availableTimeZones != null
+                && availableTimeZones.contains(timeZone);
+    }
+
+    protected CookieHelper getCookieHelper() {
+        return cookieHelper;
+    }
+
+    /**
      * The dialog that opens after the user has clicked the dashboard link.
      */
     protected class Dialog extends org.hippoecm.frontend.dialog.Dialog<Object> {
 
+        private static final long serialVersionUID = 1L;
         protected static final String DIALOG_LOCALE_LABEL = "locale-label";
         protected static final String DIALOG_TIMEZONE_LABEL = "timezone-label";
 
@@ -163,8 +244,6 @@ public class LocalizationShortcutPlugin extends RenderPlugin<Object> implements 
         protected Boolean isTimeZoneVisible;
         protected String selectedLocale;
 
-        private static final String LOCALE_COOKIE = "loc";
-        private static final String TZ_COOKIE = "tzcookie";
         private static final int COOKIE_MAX_AGE = 365 * 24 * 3600; // expire one year from now
 
         /**
@@ -217,7 +296,7 @@ public class LocalizationShortcutPlugin extends RenderPlugin<Object> implements 
             final List <String> locales = Arrays.asList(localeArray);
 
             locale = new DropDownChoice<>("locale",
-                    new PropertyModel<String>(this, "selectedLocale") {
+                    new PropertyModel<>(this, "selectedLocale") {
                         @Override
                         public void setObject(final String object) {
                             super.setObject(locales.contains(object) ? object : defaultLocale);
@@ -225,7 +304,7 @@ public class LocalizationShortcutPlugin extends RenderPlugin<Object> implements 
                     },
                    locales,
                     // Display the language name from i18n properties
-                    new IChoiceRenderer<String>() {
+                    new IChoiceRenderer<>() {
                         public String getDisplayValue(final String key) {
                             final Locale localeFromKey = new Locale(key);
                             return StringUtils.capitalize(localeFromKey.getDisplayLanguage(localeFromKey));
@@ -248,7 +327,7 @@ public class LocalizationShortcutPlugin extends RenderPlugin<Object> implements 
             final Label timezoneLabel = getLabel(DIALOG_TIMEZONE_LABEL, config);
             add(timezoneLabel);
             timezone = new DropDownChoice<>("timezone",
-                    new PropertyModel<String>(this, "selectedTimezone") {
+                    new PropertyModel<>(this, "selectedTimezone") {
                         @Override
                         public void setObject(final String object) {
                             super.setObject(availableTimeZones.contains(object) ? object : availableTimeZones.get(0) );
@@ -309,7 +388,7 @@ public class LocalizationShortcutPlugin extends RenderPlugin<Object> implements 
                 // Store locale in cookie
                 setCookieValue(LOCALE_COOKIE, selectedLocale, COOKIE_MAX_AGE);
                 // and update the session locale
-                getSession().setLocale(Locale.forLanguageTag(selectedLocale));
+                updateLocale(selectedLocale);
 
                 if (isTimeZoneVisible){
                     if(selectedTimezone != null) {
@@ -321,27 +400,16 @@ public class LocalizationShortcutPlugin extends RenderPlugin<Object> implements 
                 //trigger a full page reload (incl. navapp)
                 RequestCycle.get().find(AjaxRequestTarget.class).ifPresent(target -> target.appendJavaScript("window.top.location.reload();"));
             } catch (Exception e) {
-                log.error(e.getClass().getSimpleName() + " occurred while changing language setting", e);
+                log.error("{} occurred while changing language setting", e.getClass().getSimpleName(), e);
             }
         }
 
         protected void setCookieValue(final String cookieName, final String cookieValue, final int maxAge) {
-            final Cookie localeCookie = new Cookie(cookieName, cookieValue);
-            localeCookie.setMaxAge(maxAge);
-            localeCookie.setHttpOnly(true);
-            WebApplicationHelper.retrieveWebResponse().addCookie(localeCookie);
+            cookieHelper.setCookieValue(cookieName, cookieValue, maxAge);
         }
 
         protected String getCookieValue(final String cookieName) {
-            final Cookie[] cookies = WebApplicationHelper.retrieveWebRequest().getContainerRequest().getCookies();
-            if (cookies != null) {
-                for (final Cookie cookie : cookies) {
-                    if (cookieName.equals(cookie.getName())) {
-                        return cookie.getValue();
-                    }
-                }
-            }
-            return null;
+            return cookieHelper.getCookieValue(cookieName);
         }
 
         private void initSelectedLocale(final List<String> locales, final String defaultLocale) {
@@ -367,17 +435,12 @@ public class LocalizationShortcutPlugin extends RenderPlugin<Object> implements 
 
     }
 
+    /**
+     * @deprecated  use {@link LocalizationShortcutPlugin#updateTimeZone(String)}.
+     */
+    @Deprecated
     protected void setTimeZone(String selectedTimeZone) {
-        if (isTimeZoneValid(selectedTimeZone)) {
-            final TimeZone timeZone = TimeZone.getTimeZone(selectedTimeZone);
-            // Store selected timezone in session and cookie
-            UserSession.get().getClientInfo().getProperties().setTimeZone(timeZone);
-        }
-    }
-
-    private boolean isTimeZoneValid(final String timeZone) {
-        return timeZone != null && availableTimeZones != null
-                && availableTimeZones.contains(timeZone);
+        updateTimeZone(selectedTimeZone);
     }
 
     private List<String> getSelectableTimezones(final String[] configuredSelectableTimezones) {
