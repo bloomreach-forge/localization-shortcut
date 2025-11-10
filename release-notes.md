@@ -24,6 +24,12 @@
 
 
 ## Release Notes
+### 4.0.1
+
+_Released: 10 November 2025_
+
+- FORGE-569: Fixed issue where existing timezone + language settings were not applied on login.
+
 ### 4.0.0
 
 _Released: 6 August 2024_
