@@ -7,7 +7,7 @@
   <parent>
     <groupId>org.onehippo.cms7</groupId>
     <artifactId>hippo-cms7-project</artifactId>
-    <version>16.0.0</version>
+    <version>16.7.0</version>
   </parent>
 
   <packaging>pom</packaging>
@@ -20,7 +20,7 @@
 
   <groupId>org.bloomreach.forge.localization-shortcut</groupId>
   <artifactId>bloomreach-localization-shortcut</artifactId>
-  <version>4.0.1</version>
+  <version>4.0.2</version>
 
   <properties>
     <!-- Bloomreach CMS versioning -->

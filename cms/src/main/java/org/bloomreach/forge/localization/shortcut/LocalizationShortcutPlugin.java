@@ -23,7 +23,9 @@ import java.util.Locale;
 import java.util.TimeZone;
 import java.util.stream.Collectors;
 
-import org.apache.commons.lang.StringUtils;
+
+import org.apache.commons.lang3.StringUtils;
+import org.apache.commons.lang3.Strings;
 import org.apache.wicket.Component;
 import org.apache.wicket.ajax.AjaxRequestTarget;
 import org.apache.wicket.ajax.markup.html.AjaxLink;
@@ -112,12 +114,12 @@ public class LocalizationShortcutPlugin extends RenderPlugin<Object> implements 
         IPluginConfig localeConfig = config.getPluginConfig(localeString);
 
         // just in case the locale contains others than language code, try to find it by language code again
-        if (localeConfig == null && !StringUtils.equals(locale.getLanguage(), localeString)) {
+        if (localeConfig == null && !Strings.CS.equals(locale.getLanguage(), localeString)) {
             localeConfig = config.getPluginConfig(locale.getLanguage());
         }
 
         // if still not found, then try to find it by the default language again.
-        if (localeConfig == null && !StringUtils.equals(DEFAULT_LANGUAGE, locale.getLanguage())) {
+        if (localeConfig == null && !Strings.CS.equals(DEFAULT_LANGUAGE, locale.getLanguage())) {
             localeConfig = config.getPluginConfig(DEFAULT_LANGUAGE);
         }
 
