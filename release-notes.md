@@ -1,5 +1,5 @@
 <!--
-  Copyright 2017-2022 Bloomreach Inc. (http://www.bloomreach.com)
+  Copyright 2017-2026 Bloomreach Inc. (http://www.bloomreach.com)
 
   Licensed under the Apache License, Version 2.0 (the "License");
   you may not use this file except in compliance with the License.
@@ -18,12 +18,19 @@
 
 | Bloomreach XM | Localization Shortcut Plugin | 
 |---------------|------------------------------|
-| 16.x          | 4.x                          |
+| 16.7.x        | 4.0.2+                       |
+| 16.x          | 4.0.1                        |
 | 15.x          | 3.x                          |
 | 14.x          | 2.x                          |
 
 
 ## Release Notes
+### 4.0.2
+
+_Released: 25 February 2026_
+
+- FORGE-569: Fixed issue where existing timezone + language settings were not applied on login.
+
 ### 4.0.1
 
 _Released: 10 November 2025_
