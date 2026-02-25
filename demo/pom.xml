@@ -5,14 +5,14 @@
   <parent>
     <groupId>org.onehippo.cms7</groupId>
     <artifactId>hippo-cms7-release</artifactId>
-    <version>16.0.0</version>
+    <version>16.7.0</version>
   </parent>
 
   <name>Bloomreach Forge Localization Shortcut Plugin Demo</name>
   <description>Bloomreach Forge Localization Shortcut Plugin Demo</description>
   <groupId>org.bloomreach.forge.localizationshortcut.demo</groupId>
   <artifactId>demo</artifactId>
-  <version>4.0.2-SNAPSHOT</version>
+  <version>4.0.2</version>
   <packaging>pom</packaging>
 
   <!--
@@ -62,8 +62,6 @@
 
     <!--***START temporary override of versions*** -->
     <!-- ***END temporary override of versions*** -->
-
-    <essentials.version>16.0.0</essentials.version>
 
     <development-module-deploy-dir>shared/lib</development-module-deploy-dir>
 
@@ -188,7 +186,6 @@
         <module>repository-data</module>
         <module>cms</module>
         <module>site</module>
-        <module>essentials</module>
       </modules>
     </profile>
 
@@ -215,13 +212,6 @@
     <profile>
       <id>docker.run</id>
       <dependencies>
-        <dependency>
-          <groupId>${project.groupId}</groupId>
-          <artifactId>${project.artifactId}-essentials</artifactId>
-          <version>${project.version}</version>
-          <type>war</type>
-          <scope>provided</scope>
-        </dependency>
         <dependency>
           <groupId>${project.groupId}</groupId>
           <artifactId>${project.artifactId}-repository-data-development</artifactId>
@@ -358,13 +348,6 @@
                   <type>war</type>
                   <properties>
                     <context>/site</context>
-                  </properties>
-                </deployable>
-                <deployable>
-                  <location>${project.basedir}/essentials/target/essentials</location>
-                  <type>war</type>
-                  <properties>
-                    <context>/essentials</context>
                   </properties>
                 </deployable>
               </deployables>
