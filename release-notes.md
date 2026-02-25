@@ -29,7 +29,7 @@
 
 _Released: 25 February 2026_
 
-- FORGE-569: Fixed issue where existing timezone + language settings were not applied on login.
+- FORGE-623: 16.7+ compatibility
 
 ### 4.0.1
 
