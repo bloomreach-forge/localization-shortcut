@@ -25,6 +25,8 @@
   <properties>
     <!-- Bloomreach CMS versioning -->
     <hippo.cms.version>${hippo.release.version}</hippo.cms.version>
+
+    <wicket.version>10.1.0</wicket.version>
   </properties>
 
   <modules>
