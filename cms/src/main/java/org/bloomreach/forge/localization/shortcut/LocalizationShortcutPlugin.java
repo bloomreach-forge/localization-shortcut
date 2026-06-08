@@ -21,11 +21,8 @@ import java.util.Collections;
 import java.util.List;
 import java.util.Locale;
 import java.util.TimeZone;
-import java.util.stream.Collectors;
-
 
 import org.apache.commons.lang3.StringUtils;
-import org.apache.commons.lang3.Strings;
 import org.apache.wicket.Component;
 import org.apache.wicket.ajax.AjaxRequestTarget;
 import org.apache.wicket.ajax.markup.html.AjaxLink;
@@ -78,7 +75,7 @@ public class LocalizationShortcutPlugin extends RenderPlugin<Object> implements 
     private static List<String> getSupportedJavaTimeZones() {
         return Arrays.stream(TimeZone.getAvailableIDs())
                 .filter(tz -> !tz.startsWith("Etc/"))
-                .collect(Collectors.toList());
+                .toList();
     }
 
 
@@ -114,12 +111,12 @@ public class LocalizationShortcutPlugin extends RenderPlugin<Object> implements 
         IPluginConfig localeConfig = config.getPluginConfig(localeString);
 
         // just in case the locale contains others than language code, try to find it by language code again
-        if (localeConfig == null && !Strings.CS.equals(locale.getLanguage(), localeString)) {
+        if (localeConfig == null && !locale.getLanguage().equals(localeString)) {
             localeConfig = config.getPluginConfig(locale.getLanguage());
         }
 
         // if still not found, then try to find it by the default language again.
-        if (localeConfig == null && !Strings.CS.equals(DEFAULT_LANGUAGE, locale.getLanguage())) {
+        if (localeConfig == null && !DEFAULT_LANGUAGE.equals(locale.getLanguage())) {
             localeConfig = config.getPluginConfig(DEFAULT_LANGUAGE);
         }
 
@@ -308,7 +305,7 @@ public class LocalizationShortcutPlugin extends RenderPlugin<Object> implements 
                     // Display the language name from i18n properties
                     new IChoiceRenderer<>() {
                         public String getDisplayValue(final String key) {
-                            final Locale localeFromKey = new Locale(key);
+                            final Locale localeFromKey = Locale.of(key);
                             return StringUtils.capitalize(localeFromKey.getDisplayLanguage(localeFromKey));
                         }
 
@@ -432,7 +429,7 @@ public class LocalizationShortcutPlugin extends RenderPlugin<Object> implements 
                 // always use simplified Chinese, Wicket does not known Chinese without a country
                 return Locale.SIMPLIFIED_CHINESE;
             }
-            return new Locale(selectedLocale);
+            return Locale.of(selectedLocale);
         }
 
     }
@@ -452,7 +449,7 @@ public class LocalizationShortcutPlugin extends RenderPlugin<Object> implements 
             selectableTimezones = Arrays.stream(configuredSelectableTimezones)
                     .filter(StringUtils::isNotBlank)
                     .filter(SUPPORTED_JAVA_TIMEZONES::contains)
-                    .collect(Collectors.toList());
+                    .toList();
         }
 
         return selectableTimezones.isEmpty() ? SUPPORTED_JAVA_TIMEZONES : selectableTimezones;
