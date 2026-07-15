@@ -1,5 +1,5 @@
 <!--
-  Copyright 2017-2026 Bloomreach Inc. (http://www.bloomreach.com)
+  Copyright 2026 Bloomreach Inc. (http://www.bloomreach.com)
 
   Licensed under the Apache License, Version 2.0 (the "License");
   you may not use this file except in compliance with the License.
@@ -18,6 +18,7 @@
 
 | Bloomreach XM | Localization Shortcut Plugin | 
 |---------------|------------------------------|
+| 17.x          | 5.0.x                        |
 | 16.7.x        | 4.0.2+                       |
 | 16.x          | 4.0.1                        |
 | 15.x          | 3.x                          |
@@ -25,6 +26,12 @@
 
 
 ## Release Notes
+### 5.0.0
+
+_Released: 15 July 2026_
+
+- FORGE-588: Upgrade to Bloomreach Experience Manager 17, JDK 21, Spring Boot 4.
+
 ### 4.0.2
 
 _Released: 25 February 2026_

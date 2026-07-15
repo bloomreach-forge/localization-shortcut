@@ -7,7 +7,7 @@
   <parent>
     <groupId>org.onehippo.cms7</groupId>
     <artifactId>hippo-cms7-project</artifactId>
-    <version>16.7.0</version>
+    <version>17.1.1</version>
   </parent>
 
   <packaging>pom</packaging>
@@ -20,14 +20,13 @@
 
   <groupId>org.bloomreach.forge.localization-shortcut</groupId>
   <artifactId>bloomreach-localization-shortcut</artifactId>
-  <version>4.0.2</version>
+  <version>5.0.0</version>
 
   <properties>
     <!-- Bloomreach CMS versioning -->
     <hippo.cms.version>${hippo.release.version}</hippo.cms.version>
 
-    <!-- from CMS root pom -->
-    <wicket.version>10.0.0</wicket.version>
+    <wicket.version>10.9.1</wicket.version>
   </properties>
 
   <modules>
@@ -52,7 +51,7 @@
   </distributionManagement>
 
   <issueManagement>
-    <url>https://issues.onehippo.com/browse/HIPFORGE</url>
+    <url>https://bloomreach.atlassian.net/browse/FORGE</url>
   </issueManagement>
 
   <organization>

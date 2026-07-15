@@ -11,7 +11,7 @@ Install the plugin version property in the ```<properties>``` section of the mai
 Set the [latest version](release-notes.md) that has been released for your brX(M) project version. 
 
 ```xml
-<bloomreach.forge.localizationshortcut.version>4.0.2</bloomreach.forge.localizationshortcut.version>
+<bloomreach.forge.localizationshortcut.version>5.0.0</bloomreach.forge.localizationshortcut.version>
 ```
 
 Install the following dependencies in the ```<dependencies>``` section of the ```cms-dependencies``` module's pom.xml:
@@ -37,7 +37,7 @@ Install the following dependencies in the ```<dependencies>``` section of the ``
 
 * A dashboard shortcut node (localizationShortcutPlugin) will be installed under /hippo:configuration/hippo:frontend/cms/cms-dashshortcuts
 
-* The locales available in the dropdown are the same as the ones that have been defined for your project. They can be altered here: [Localization modules](https://documentation.bloomreach.com/14/library/concepts/editor-interface/cms-ui-localization-modules.html) 
+* The locales available in the dropdown are the same as the ones that have been defined for your project. They can be altered here: [Localization modules](https://xmdocumentation.bloomreach.com/library/concepts/editor-interface/cms-ui-localization-modules.html) 
 
 * To change labels for a locale, find the frontend:pluginconfig child node that corresponds with your locale and alter its properties
 
