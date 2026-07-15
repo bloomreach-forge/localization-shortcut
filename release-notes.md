@@ -1,5 +1,5 @@
 <!--
-  Copyright 2017-2026 Bloomreach Inc. (http://www.bloomreach.com)
+  Copyright 2026 Bloomreach Inc. (http://www.bloomreach.com)
 
   Licensed under the Apache License, Version 2.0 (the "License");
   you may not use this file except in compliance with the License.
@@ -28,10 +28,9 @@
 ## Release Notes
 ### 5.0.0
 
-_Released: TBD_
+_Released: 15 July 2026_
 
 - FORGE-588: Upgrade to Bloomreach Experience Manager 17, JDK 21, Spring Boot 4.
-- Modernize Java source: `Stream.toList()`, `Locale.of()`, remove commons-lang3 `Strings` usage.
 
 ### 4.0.2
 
